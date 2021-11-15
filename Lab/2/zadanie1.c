@@ -41,8 +41,12 @@ int main()
     int tablicaNominalow[ILOSC_BANKNOTOW + ILOSC_MONET] = {200 zl, 100 zl, 50 zl, 20 zl, 10 zl, 5 zl, 2 zl, 1 zl, 50 gr, 20 gr, 10 gr, 5 gr, 2 gr, 1 gr};
     
     printf("\tbanknoty:\n");
-    for(int i = 0; i < ILOSC_BANKNOTOW; i++) //Niezmiennik to tablicaNominalow oraz cena >= 1 zl
+    for(int i = 0; i < ILOSC_BANKNOTOW + ILOSC_MONET; i++) //Niezmiennik to tablicaNominalow oraz cena >= 1 zl
     {
+        if(i == ILOSC_BANKNOTOW)
+        {
+            printf("\tmonety:\n");
+        }
         if(cena / tablicaNominalow[i] > 0)
         {
             printf("\t\t%d x ", cena / tablicaNominalow[i]);
@@ -51,14 +55,6 @@ int main()
         }
     }
 
-    printf("\tmonety:\n");
-    for(int i = ILOSC_BANKNOTOW; i < ILOSC_MONET + ILOSC_BANKNOTOW; i++)//Niezmiennik to tablicaNominalow oraz cena >= 0
-    {
-        if(cena / tablicaNominalow[i] > 0)
-        {
-            printf("\t\t%d x ", cena / tablicaNominalow[i]);
-            wypiszNominal(tablicaNominalow[i]);
-            cena %= tablicaNominalow[i];
-        }
-    }
 }
+
+

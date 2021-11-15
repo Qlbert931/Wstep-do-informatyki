@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 
 int wczytajInt(char* pytanie)
 {
@@ -37,6 +38,7 @@ double wczytajDouble(char* pytanie)
 int main()
 {
     int n = wczytajInt("n: ");
+    assert(n > 0);
 
     double suma = 0;
     for(int i = 0; i < n; i++)//Niezmiennik petli to n oraz suma >= 0
