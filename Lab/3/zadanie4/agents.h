@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct agent
+{
+    int x;
+    int y;
+};
+
+struct agent newagent(int x, int y);
+
+void west(struct agent *a);
+
+void south(struct agent *a);
+
+void east(struct agent *a);
+
+void north(struct agent *a);
+
+double distance(struct agent a1, struct agent a2);
