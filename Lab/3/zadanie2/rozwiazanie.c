@@ -11,6 +11,10 @@ double rozwiazanie(double a, double b, double eps)
         {
             b = p;
         }
+        else if(f(p) == 0.0)
+        {
+            return p;
+        }
         else
         {
             a = p;

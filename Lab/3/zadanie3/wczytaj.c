@@ -6,7 +6,7 @@ long int wczytajLongInt(char* pytanie)
 
     printf("%s", pytanie);
 
-    while (scanf("%ld", &wynik) < 1)
+    while (scanf("%ld", &wynik) < 1 || wynik < 1)
     {
         while(getchar() != '\n');
         printf("%s", pytanie);
